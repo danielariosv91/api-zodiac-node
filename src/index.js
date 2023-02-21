@@ -6,7 +6,7 @@ const signsRoutes = require('./routes/signs')
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 9000;
+const port = parseInt(process.env.PORT) || 8080;
 
 
 // middleware
@@ -25,4 +25,4 @@ mongoose.connect(process.env.MONGODB_URI)
     })
     .catch((error) => console.log(error))
 
-app.listen(9000, () => console.log('Server is listening on port', port))
+app.listen(port, () => console.log('Server is listening on port', port))
